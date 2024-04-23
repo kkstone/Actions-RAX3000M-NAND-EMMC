@@ -1,5 +1,3 @@
-**闭源驱动**
-
 # Actions-rax3000m-emmc
 使用 GitHub Actions 在线编译定制 CMCC RAX3000M eMMC version 的 immortalwrt-mt798x 固件
 
