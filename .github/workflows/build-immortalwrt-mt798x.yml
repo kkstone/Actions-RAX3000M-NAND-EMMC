@@ -36,12 +36,15 @@ on:
         required: true
         default: false
         type: boolean
+  schedule:
+    - cron: 0 8 * * 2
 
 env:
   REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
   FREE_DISK_SH: scripts/free_disk_space.sh
   ENV_SH: scripts/environment.sh
   DIY_SH: scripts/diy.sh
+  DIY1_SH: scripts/diy1.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: false
   UPLOAD_RELEASE: true
@@ -91,6 +94,7 @@ jobs:
     - name: 更新 & 安装 feeds & 执行脚本
       run: |
         cd openwrt
+        chmod +x $GITHUB_WORKSPACE/$DIY1_SH && $GITHUB_WORKSPACE/$DIY1_SH
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --global user.name "github-actions[bot]"
         #git fetch https://github.com/padavanonly/immortalwrt-mt798x
