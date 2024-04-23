@@ -1,4 +1,4 @@
-**闭源驱动** | [开源驱动](README_mainline.md)
+**闭源驱动**
 
 # Actions-rax3000m-emmc
 使用 GitHub Actions 在线编译定制 CMCC RAX3000M eMMC version 的 immortalwrt-mt798x 固件
@@ -12,8 +12,7 @@
 `f2fsck, losetup, mkf2fs, kmod-fs-f2fs, kmod-mmc, luci-app-ksmbd, luci-i18n-ksmbd-zh-cn, ksmbd-utils` 等
 
 添加集成软件包
-`cfdisk, htop, openssl-util, kmod-fuse, kmod-usb-net-ipheth, kmod-usb-net-rndis, luci-app-argon-config, luci-app-autoreboot, luci-app-diskman, luci-app-ksmbd, luci-app-nlbwmon, luci-app-openclash, luci-app-openvpn, luci-app-ttyd, luci-app-upnp, luci-app-usb-printer, luci-app-zerotier, luci-theme-argon`
-等并预置 openclash 内核
+`cfdisk, htop, openssl-util, kmod-fuse, kmod-usb-net-ipheth, kmod-usb-net-rndis, luci-app-argon-config, luci-app-autoreboot, luci-app-diskman, luci-app-ksmbd, luci-app-nlbwmon, luci-app-passwall, luci-app-ttyd, luci-app-upnp, luci-app-zerotier, luci-theme-argon`
 
 加入由 [1715173329 天灵](https://github.com/1715173329) 使用 js 重写，[237大佬](https://www.right.com.cn/forum/?364126) 适配硬件 QoS 的 [luci-app-eqos-mtk](https://github.com/padavanonly/immortalwrt-mt798x/commit/7c8019ce4bcb1a79c01c517b62e49f059ca70049)
 
