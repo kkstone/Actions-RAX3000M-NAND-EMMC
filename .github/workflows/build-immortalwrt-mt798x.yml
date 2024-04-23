@@ -19,7 +19,8 @@ on:
       ssh:
         description: 'SSH connection to Actions'
         required: false
-        default: 'false'
+        default: false
+        type: boolean
       USE_MTWIFI_CFG:
         description: 'Use mtwifi-cfg'
         required: true
