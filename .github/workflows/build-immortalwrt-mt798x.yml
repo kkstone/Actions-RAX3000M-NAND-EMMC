@@ -102,6 +102,13 @@ jobs:
         ./scripts/feeds update -a && ./scripts/feeds install -a        
         chmod +x $GITHUB_WORKSPACE/$DIY_SH && $GITHUB_WORKSPACE/$DIY_SH
 
+    - name: 修复 Go 语言版本
+      run: |
+        cd openwrt
+        rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
+        rm -rf feeds/packages/lang/golang
+        git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+
     - name: 导入补丁和配置
       run: |
         [ -e files ] && mv files openwrt/files
