@@ -16,6 +16,11 @@ permissions: write-all
 on:
   workflow_dispatch:
     inputs:
+      USE_SSH:
+        description: 'SSH connection to Actions'
+        required: false
+        default: false
+        type: boolean
       USE_MTWIFI_CFG:
         description: 'Use mtwifi-cfg'
         required: true
@@ -119,6 +124,13 @@ jobs:
         sed -i 's/26000000/52000000/g' openwrt/target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7981-cmcc-rax3000m-emmc.dts
         grep max-frequency openwrt/target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7981-cmcc-rax3000m-emmc.dts
 
+    - name: SSH 链接
+      uses: P3TERX/ssh2actions@v1.0.0
+      if: (github.event.inputs.USE_SSH == 'true' && github.event.inputs.USE_SSH != 'false') || contains(github.event.action, 'USE_SSH')
+      env:
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+    
     - name: 下载文件
       run: |
         cd openwrt
