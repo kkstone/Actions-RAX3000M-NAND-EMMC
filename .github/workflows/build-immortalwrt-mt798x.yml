@@ -101,6 +101,14 @@ jobs:
         #git merge FETCH_HEAD
         ./scripts/feeds update -a && ./scripts/feeds install -a        
         chmod +x $GITHUB_WORKSPACE/$DIY_SH && $GITHUB_WORKSPACE/$DIY_SH
+   
+    - name: 修复 Go 语言版本
+      run: |
+        cd openwrt
+        rm -rf feeds/luci/applications/luci-app-mosdns
+        rm -rf feeds/packages/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*}
+        rm -rf feeds/packages/lang/golang
+        git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
     - name: 导入补丁和配置
       run: |
