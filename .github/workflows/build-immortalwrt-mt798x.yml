@@ -16,11 +16,10 @@ permissions: write-all
 on:
   workflow_dispatch:
     inputs:
-      USE_SSH:
+      ssh:
         description: 'SSH connection to Actions'
         required: false
-        default: false
-        type: boolean
+        default: 'false'
       USE_MTWIFI_CFG:
         description: 'Use mtwifi-cfg'
         required: true
@@ -126,7 +125,7 @@ jobs:
 
     - name: SSH 链接
       uses: P3TERX/ssh2actions@v1.0.0
-      if: env.USE_SSH == 'true'
+      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
       env:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
