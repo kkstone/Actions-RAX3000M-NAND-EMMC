@@ -11,4 +11,4 @@ git clone https://github.com/jerrykuku/lua-maxminddb.git
 
 wget https://github.com/kkstone/office-work/raw/main/luci-app-frp.zip
 unzip luci-app-frp.zip && rm -rf luci-app-frp.zip
-cp luci-app-adguardhome/luci-app-adguardhome/po/zh-cn luci-app-adguardhome/luci-app-adguardhome/po/zh_Hans
+cp openwrt-packages/luci-app-wolplus/po/zh-cn openwrt-packages/luci-app-wolplus/po/zh_Hans
