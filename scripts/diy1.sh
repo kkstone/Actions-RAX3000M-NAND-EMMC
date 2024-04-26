@@ -9,5 +9,5 @@ git clone https://github.com/sundaqiang/openwrt-packages.git
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome.git
 git clone https://github.com/jerrykuku/lua-maxminddb.git
 
-wget https://raw.githubusercontent.com/kkstone/Actions-rax3000m-emmc/main/files/luci-app-frp.zip
+wget https://github.com/kkstone/office-work/raw/main/luci-app-frp.zip
 unzip luci-app-frp.zip && rm -rf luci-app-frp.zip
