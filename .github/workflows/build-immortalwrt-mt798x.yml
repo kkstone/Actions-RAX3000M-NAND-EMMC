@@ -34,7 +34,7 @@ on:
       USE_52MHZ:
         description: 'Use 52MHz max-frequency'
         required: true
-        default: false
+        default: true
         type: boolean
   schedule:
     - cron: 0 8 * * 2
