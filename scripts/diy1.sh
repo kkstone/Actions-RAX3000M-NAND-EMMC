@@ -7,9 +7,6 @@ git clone https://github.com/kenzok8/small.git
 git clone https://github.com/kuoruan/openwrt-frp.git
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome.git
 git clone https://github.com/jerrykuku/lua-maxminddb.git
-git clone https://github.com/mwarning/zerotier-openwrt.git
-cp -rf zerotier-openwrt/zerotier zerotier/
-rm -rf zerotier-openwrt/
 
 wget https://github.com/vernesong/OpenClash/archive/master.zip
 unzip master.zip && rm -rf master.zip
