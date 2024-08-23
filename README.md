@@ -10,7 +10,7 @@
 `f2fsck, losetup, mkf2fs, kmod-fs-f2fs, kmod-mmc, luci-app-ksmbd, luci-i18n-ksmbd-zh-cn, ksmbd-utils` 等
 
 添加集成软件包
-`cfdisk, htop, openssl-util, kmod-fuse, luci-app-adguardhome, luci-app-argon-config, luci-app-autoreboot, luci-app-diskman, luci-app-frpc, luci-app-hd-idle, luci-app-ksmbd, luci-app-natmap, luci-app-nlbwmon, luci-app-passwall, luci-app-ramfree, luci-app-smartdns, luci-app-ttyd, luci-app-uhttpd, luci-app-upnp, luci-app-vlmcsd, luci-app-vsftpd, luci-app-watchcat, luci-app-wolplus, luci-app-xlnetacc, luci-app-zerotier, luci-theme-argon`
+`cfdisk, htop, openssl-util, kmod-fuse, luci-app-adguardhome, luci-app-argon-config, luci-app-autoreboot, luci-app-diskman, luci-app-frpc, luci-app-hd-idle, luci-app-ksmbd, luci-app-natmap, luci-app-nlbwmon, luci-app-openclash, luci-app-ramfree, luci-app-smartdns, luci-app-ttyd, luci-app-uhttpd, luci-app-upnp, luci-app-vlmcsd, luci-app-vsftpd, luci-app-watchcat, luci-app-wolplus, luci-app-xlnetacc, luci-app-zerotier, luci-theme-argon`
 
 加入由 [1715173329 天灵](https://github.com/1715173329) 使用 js 重写，[237大佬](https://www.right.com.cn/forum/?364126) 适配硬件 QoS 的 [luci-app-eqos-mtk](https://github.com/padavanonly/immortalwrt-mt798x/commit/7c8019ce4bcb1a79c01c517b62e49f059ca70049)
 
@@ -44,7 +44,7 @@
 > ```
 > 对应 ImmortalWrt CMCC RAX3000M eMMC version (custom U-Boot layout)、Q-WRT、及其他 eMMC 单分区版固件。
 
-~~路由器进入 uboot 需要手动设置本机 IP 192.168.1.100 网关 192.168.1.1 DNS 192.168.1.1，~~ 新版 custom U-Boot 已支持 DHCP，浏览器输入 `192.168.1.1` 进入 Web-UI 刷写固件，所有文件可在 https://firmware.download.immortalwrt.eu.org/uboot/mediatek 获取
+路由器进入 uboot 需要手动设置本机 IP 192.168.1.100 网关 192.168.1.1 DNS 192.168.1.1，新版 custom U-Boot 已支持 DHCP，浏览器输入 `192.168.1.1` 进入 Web-UI 刷写固件，所有文件可在 https://firmware.download.immortalwrt.eu.org/uboot/mediatek 获取
 
 ## 注意事项
 此分区布局默认不创建 eMMC 闪存最后一块 56G 大分区，你需要使用 `cfdisk /dev/mmcblk0` 为最后一块剩余空闲容量手动创建 /dev/mmcblk0p7 分区并通过 mkfs.ext4 格式化以挂载使用，此后更新刷入其他固件则无需再进行相同操作，固件可以自动挂载
