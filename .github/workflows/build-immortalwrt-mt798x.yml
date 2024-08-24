@@ -115,6 +115,7 @@ jobs:
         wget -r --no-parent https://cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/zerotier/
         cp -rf cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/zerotier feeds/packages/net/zerotier/
         rm -rf cdn.jsdelivr.net
+        find feeds/packages/net/zerotier -name index.html -exec rm {} \;
 
     - name: 导入补丁和配置
       run: |
