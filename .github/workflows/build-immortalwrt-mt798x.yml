@@ -108,6 +108,14 @@ jobs:
         rm -rf feeds/packages/lang/golang
         git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
+    - name: 升级 Zerotier 版本
+      run: |
+        cd openwrt
+        rm -rf feeds/packages/net/zerotier
+        wget -r --no-parent https://cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/zerotier
+        cp -rf cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/zerotier feeds/packages/net/zerotier/
+        rm -rf cdn.jsdelivr.net
+
     - name: 导入补丁和配置
       run: |
         [ -e files ] && mv files openwrt/files
