@@ -112,7 +112,7 @@ jobs:
       run: |
         cd openwrt
         rm -rf feeds/packages/net/zerotier
-        wget -r --no-parent https://cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/zerotier
+        wget -r --no-parent https://cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/zerotier/
         cp -rf cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/zerotier feeds/packages/net/zerotier/
         rm -rf cdn.jsdelivr.net
 
