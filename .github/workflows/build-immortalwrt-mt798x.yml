@@ -108,7 +108,7 @@ jobs:
         rm -rf feeds/packages/lang/golang
         git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
-    - name: 升级 Zerotier 版本
+    - name: 升级软件版本
       run: |
         cd openwrt
         rm -rf feeds/packages/net/zerotier
@@ -116,6 +116,23 @@ jobs:
         cp -rf cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/zerotier feeds/packages/net/zerotier/
         rm -rf cdn.jsdelivr.net
         find feeds/packages/net/zerotier -name index.html -exec rm {} \;
+
+        rm -rf feeds/packages/net/tcping/Makefile
+        wget -O Makefile-tcping https://cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/tcping/Makefile
+        cp -rf Makefile-tcping feeds/packages/net/tcping/Makefile
+        rm -rf Makefile-tcping
+
+        rm -rf feeds/packages/net/smartdns
+        wget -r --no-parent https://cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/smartdns/
+        cp -rf cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/smartdns feeds/packages/net/smartdns/
+        rm -rf cdn.jsdelivr.net
+        find feeds/packages/net/smartdns -name index.html -exec rm {} \;
+
+        rm -rf feeds/packages/net/natmap
+        wget -r --no-parent https://cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/natmap/
+        cp -rf cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/natmap feeds/packages/net/natmap/
+        rm -rf cdn.jsdelivr.net
+        find feeds/packages/net/natmap -name index.html -exec rm {} \;
 
     - name: 导入补丁和配置
       run: |
