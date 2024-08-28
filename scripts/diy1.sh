@@ -4,6 +4,7 @@
 
 cd package
 git clone https://github.com/kenzok8/small.git
+rm -rf small/tcping
 git clone https://github.com/kuoruan/openwrt-frp.git
 git clone https://github.com/xiaoxiao29/luci-app-adguardhome.git
 git clone https://github.com/jerrykuku/lua-maxminddb.git
