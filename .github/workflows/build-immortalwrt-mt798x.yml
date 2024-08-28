@@ -122,6 +122,12 @@ jobs:
         cp -rf Makefile-tcping feeds/packages/net/tcping/Makefile
         rm -rf Makefile-tcping
 
+        rm -rf feeds/packages/net/natmap
+        wget -r --no-parent https://cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/natmap/
+        cp -rf cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/natmap feeds/packages/net/natmap/
+        rm -rf cdn.jsdelivr.net
+        find feeds/packages/net/natmap -name index.html -exec rm {} \;
+
         rm -rf feeds/packages/net/smartdns
         wget -r --no-parent https://cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/smartdns/
         cp -rf cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/smartdns feeds/packages/net/smartdns/
