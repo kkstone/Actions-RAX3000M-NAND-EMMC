@@ -128,12 +128,6 @@ jobs:
         rm -rf cdn.jsdelivr.net
         find feeds/packages/net/smartdns -name index.html -exec rm {} \;
 
-        rm -rf feeds/packages/net/natmap
-        wget -r --no-parent https://cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/natmap/
-        cp -rf cdn.jsdelivr.net/gh/immortalwrt/packages@master/net/natmap feeds/packages/net/natmap/
-        rm -rf cdn.jsdelivr.net
-        find feeds/packages/net/natmap -name index.html -exec rm {} \;
-
     - name: 导入补丁和配置
       run: |
         [ -e files ] && mv files openwrt/files
