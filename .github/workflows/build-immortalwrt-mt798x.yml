@@ -36,8 +36,6 @@ on:
         required: true
         default: false
         type: boolean
-  schedule:
-   - cron: 0 8 * * 4
 
 env:
   REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
