@@ -29,7 +29,7 @@ on:
       USE_NX30PRO_EEPROM:
         description: 'Use nx30pro eeprom'
         required: true
-        default: true
+        default: false
         type: boolean
       USE_52MHZ:
         description: 'Use 52MHz max-frequency'
