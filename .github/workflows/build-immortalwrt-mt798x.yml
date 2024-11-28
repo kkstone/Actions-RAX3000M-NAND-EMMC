@@ -58,7 +58,6 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         echo "USE_MTWIFI_CFG=${{ github.event.inputs.USE_MTWIFI_CFG }}" >> $GITHUB_ENV
-        echo "USE_NX30PRO_EEPROM=${{ github.event.inputs.USE_NX30PRO_EEPROM }}" >> $GITHUB_ENV
         echo "USE_52MHZ=${{ github.event.inputs.USE_52MHZ }}" >> $GITHUB_ENV
         chmod +x $FREE_DISK_SH && $FREE_DISK_SH
         sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
@@ -187,14 +186,6 @@ jobs:
         else
           echo "- 使用 MTK SDK 无线控制界面" >> release.txt
           wlan_luci_interface="luci-app-mtk"
-        fi
-        eeprom_status=""
-        if [ -e openwrt/target/linux/mediatek/mt7981/base-files/lib/firmware/MT7981_iPAiLNA_EEPROM.bin ] ; then
-          echo "- eeprom 使用 H3C NX30 Pro 提取版本" >> release.txt
-          eeprom_status="nx30pro_eeprom"
-        else
-          echo "- eeprom 未修改" >> release.txt
-          eeprom_status="default_eeprom"
         fi
         max_frequency=$(($(grep -oP "max-frequency = <\K[0-9]*" openwrt/target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7981-cmcc-rax3000m-emmc.dts) / 1000000))
         echo "- 使用闪存频率: ${max_frequency}MHz" >> release.txt
